@@ -1,13 +1,14 @@
 import constants as const
+import key
 from telegram.ext import *
 import responses as R 
 import telegram
 import api_calls as api
 import display as dy
-
+import os
 
 print('Bot started ...')
-bot = telegram.Bot(token=const.API_KEY)
+bot = telegram.Bot(token=key.API_KEY)
 print (bot.getMe())
 print (api.getDate())
 
