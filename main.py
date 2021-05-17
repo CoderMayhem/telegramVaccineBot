@@ -3,6 +3,8 @@ from telegram.ext import *
 import responses as R 
 import telegram
 import api_calls as api
+import display as dy
+
 
 print('Bot started ...')
 bot = telegram.Bot(token=const.API_KEY)
@@ -10,18 +12,22 @@ print (bot.getMe())
 print (api.getDate())
 
 def start_command(update, context):
-    update.message.reply_text(const.welcome_message)
+    bot.send_message(update.message.chat_id, const.welcome_message)
 
 def help_command(update, context):
-    update.message.reply_text(const.help_message)
+    bot.send_message(update.message.chat_id, const.help_message)
 
-def findByPin_command(update, context):
-    api.getSessionsByPin('231217')
+def pin_command(update, context):
+    bot.send_message(update.message.chat_id, const.findByPin_message)
+
 
 def handle_message(update, context):
     text = str(update.message.text).lower()
     response = R.sample_responses(text)
+    #if isinstance(response, str):
     update.message.reply_text(response)
+    #else:
+    #    return response
 
 def error(update, context):
     print(f"Update {update} caused error {context.error}")
@@ -32,7 +38,7 @@ def main():
 
     dp.add_handler(CommandHandler("start", start_command))
     dp.add_handler(CommandHandler("help", help_command))
-    dp.add_handler(CommandHandler("pin", findByPin_command))
+    dp.add_handler(CommandHandler("pin", pin_command))
 
     dp.add_handler(MessageHandler(Filters.text, handle_message))
 
