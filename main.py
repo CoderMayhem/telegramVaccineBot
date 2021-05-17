@@ -21,14 +21,19 @@ def help_command(update, context):
 def pin_command(update, context):
     bot.send_message(update.message.chat_id, const.findByPin_message)
 
+def calendar_command(update,context):
+    bot.send_message(update.message.chat_id, const.findCalendarByPin_message)
+
 
 def handle_message(update, context):
     text = str(update.message.text).lower()
     response = R.sample_responses(text)
-    #if isinstance(response, str):
-    update.message.reply_text(response)
-    #else:
-    #    return response
+    if isinstance(response, list):
+        for i in response:
+            bot.send_message(update.message.chat_id, i)
+    
+    else:
+        update.message.reply_text(response)
 
 def error(update, context):
     print(f"Update {update} caused error {context.error}")
@@ -40,6 +45,7 @@ def main():
     dp.add_handler(CommandHandler("start", start_command))
     dp.add_handler(CommandHandler("help", help_command))
     dp.add_handler(CommandHandler("pin", pin_command))
+    dp.add_handler(CommandHandler("calendar", calendar_command))
 
     dp.add_handler(MessageHandler(Filters.text, handle_message))
 
