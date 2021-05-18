@@ -60,7 +60,7 @@ def main():
     updater.start_webhook(listen="0.0.0.0",
                           port=int(PORT),
                           url_path=TOKEN)
-    updater.bot.setWebhook('https://damp-woodland-03498.herokuapp.com/' + key.API_KEY)
+    updater.bot.setWebhook('https://boiling-brook-73008.herokuapp.com/' + const.API_KEY)
 
     # updater.start_polling()   #command that starts the programme. If want time delay before taking next input from user, use : updater.start_polling(5) (means delay of 5 seconds)
     updater.idle()
