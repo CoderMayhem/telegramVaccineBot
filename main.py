@@ -30,9 +30,13 @@ def handle_message(update, context):
     response = R.sample_responses(text)
     if isinstance(response, list):
         for i in response:
-            bot.send_message(update.message.chat_id, i)
-    
+            if i == response[-1]:
+                bot.send_message(update.message.chat_id, i + '\nBook your vaccination now at : https://www.cowin.gov.in/home')
+            else:
+                bot.send_chat_action(chat_id = update.message.chat_id, action= telegram.ChatAction.TYPING)
+                bot.send_message(update.message.chat_id, i)
     else:
+        bot.send_chat_action(chat_id = update.message.chat_id, action= telegram.ChatAction.TYPING)
         update.message.reply_text(response)
 
 def error(update, context):

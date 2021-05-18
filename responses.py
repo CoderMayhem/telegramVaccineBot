@@ -28,14 +28,14 @@ def sample_responses(input_text):
 
 def pin_request(message):
     request = message.split()
-    if len(request)<2 or request[0].lower() not in "pin":
+    if len(request)<2 or request[0].lower() not in {"pin" or "Pin"}:
         return False
     else:
         return True
 
 def calendar_request(message):
     request = message.split()
-    if len(request)<2 or request[0].lower() not in "calendar":
+    if len(request)<2 or request[0].lower() not in {"calendar" or "Calendar"}:
         return False
     else:
         return True

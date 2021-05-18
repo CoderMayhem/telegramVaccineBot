@@ -8,7 +8,7 @@ def displaySessionsByPin(message):
     index = 0
     text = ""
     for details in sessions['sessions']:
-        text = text + str(details['name']) + '\n' + str(details['address']) + '\n From : ' + str(details['from']) + '\n To : ' + str(details['to']) + '\n Fee : ' + str(details['fee']) + '\n Available Doses : ' + str(details['available_capacity']) + '\n Minimum Age Limit : ' + str(details['min_age_limit']) + '\n Vaccine : ' + str(details['vaccine'])  + '\n--------------------------\n'
+        text = text + str(details['name']) + '\n' + str(details['address']) + '\nFrom : ' + str(details['from']) + '\nTo : ' + str(details['to']) + '\nFee : ' + str(details['fee']) + '\nAvailable Doses : ' + str(details['available_capacity']) + '\nMinimum Age Limit : ' + str(details['min_age_limit']) + '\nVaccine : ' + str(details['vaccine'])  + '\n--------------------------\n'
 
     if text != '' :
         return text + 'Book your vaccination now at : https://www.cowin.gov.in/home'  
