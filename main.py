@@ -7,6 +7,7 @@ import api_calls as api
 import display as dy
 import os
 
+PORT = int(os.environ.get('PORT', 5000))
 print('Bot started ...')
 bot = telegram.Bot(token=key.API_KEY)
 print (bot.getMe())
@@ -55,7 +56,13 @@ def main():
 
     dp.add_error_handler(error)
 
-    updater.start_polling()   #command that starts the programme. If want time delay before taking next input from user, use : updater.start_polling(5) (means delay of 5 seconds)
+    #Start the bot
+    updater.start_webhook(listen="0.0.0.0",
+                          port=int(PORT),
+                          url_path=TOKEN)
+    updater.bot.setWebhook('https://secure-falls-42007.herokuapp.com/' + key.API_KEY)
+
+    # updater.start_polling()   #command that starts the programme. If want time delay before taking next input from user, use : updater.start_polling(5) (means delay of 5 seconds)
     updater.idle()
 
 main()
