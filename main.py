@@ -6,7 +6,7 @@ import api_calls as api
 import display as dy
 import os
 
-PORT = int(os.environ.get('PORT', '8443'))
+PORT = int(os.environ.get('PORT', 443))
 TOKEN = const.API_KEY
 print('Bot started ...')
 bot = telegram.Bot(token=const.API_KEY)
