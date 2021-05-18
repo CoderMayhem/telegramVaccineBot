@@ -58,7 +58,7 @@ def main():
 
     #Start the bot
     updater.start_webhook(listen="0.0.0.0",
-                          port=int(PORT),
+                          port=PORT,
                           url_path=TOKEN)
     updater.bot.setWebhook('https://peaceful-atoll-46044.herokuapp.com/' + const.API_KEY)
 
