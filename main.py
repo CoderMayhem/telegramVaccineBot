@@ -1,5 +1,4 @@
 import constants as const
-import key
 from telegram.ext import *
 import responses as R 
 import telegram
@@ -60,7 +59,7 @@ def main():
     updater.start_webhook(listen="0.0.0.0",
                           port=int(PORT),
                           url_path=TOKEN)
-    updater.bot.setWebhook('https://boiling-brook-73008.herokuapp.com/' + const.API_KEY)
+    updater.bot.setWebhook('https://mysterious-cove-20260.herokuapp.com/' + const.API_KEY)
 
     # updater.start_polling()   #command that starts the programme. If want time delay before taking next input from user, use : updater.start_polling(5) (means delay of 5 seconds)
     updater.idle()
