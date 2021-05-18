@@ -7,6 +7,7 @@ import display as dy
 import os
 
 PORT = int(os.environ.get('PORT', 5000))
+TOKEN = const.API_KEY
 print('Bot started ...')
 bot = telegram.Bot(token=const.API_KEY)
 print (bot.getMe())
