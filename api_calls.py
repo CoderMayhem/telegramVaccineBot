@@ -9,7 +9,7 @@ def getSessionsByPin(pincode):
     headers_dict = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36"}
     response = requests.get(url, headers= headers_dict)
     print(response.status_code)
-    sessions = response.json()
+    sessions = response.json().type('utf-8')
     return sessions
 
 def getCalendarByPin(pincode):
