@@ -9,7 +9,7 @@ import os
 
 PORT = int(os.environ.get('PORT', 5000))
 print('Bot started ...')
-bot = telegram.Bot(token=key.API_KEY)
+bot = telegram.Bot(token=const.API_KEY)
 print (bot.getMe())
 print (api.getDate())
 
@@ -44,7 +44,7 @@ def error(update, context):
     print(f"Update {update} caused error {context.error}")
 
 def main():
-    updater = Updater(key.API_KEY, use_context=True)
+    updater = Updater(const.API_KEY, use_context=True)
     dp = updater.dispatcher #dispatcher
 
     dp.add_handler(CommandHandler("start", start_command))
