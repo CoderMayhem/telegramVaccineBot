@@ -28,6 +28,7 @@ def calendar_command(update,context):
 
 def handle_message(update, context):
     text = str(update.message.text).lower()
+    
     response = R.sample_responses(text)
     if isinstance(response, list):
         for i in response:
@@ -41,7 +42,7 @@ def handle_message(update, context):
         update.message.reply_text(response)
 
 def error(update, context):
-    print(f"Update {update} msg {update.message} caused error {context.error}")
+    print(f"Update {update} caused error {context.error}")
 
 def main():
     updater = Updater(const.API_KEY, use_context=True)
