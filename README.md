@@ -6,4 +6,4 @@ Telegram bot to give you updates about vaccination slots in your locality.
 2. ~~add emojis~~
 3. ~~add 'typing'~~
 4. ~~add texts to /help, /start, /pin and /calendar commands~~
-5. release the bot
+5. release the bot (can't be deployed on heroku, looking for alternatives)
