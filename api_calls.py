@@ -7,7 +7,8 @@ import json
 def getSessionsByPin(pincode):
     date = getDate()
     url = const.serverUrl + '/v2/appointment/sessions/public/findByPin?pincode=' + str(pincode) + '&date=' + str(date)
-    headers_dict = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36"}
+    headers_dict = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36'}
+    print(url)
     response = requests.get(url, headers= headers_dict)
     print('here?' + str(response.status_code))
     sessions = json.loads(response.text)
