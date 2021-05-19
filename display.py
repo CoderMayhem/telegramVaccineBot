@@ -1,11 +1,11 @@
 import api_calls as api
 import constants as const
+import json
 
 def displaySessionsByPin(message):
     pincode = message.split()[1]
     sessions = api.getSessionsByPin(pincode)
     print(sessions)
-    index = 0
     text = ""
     for details in sessions['sessions']:
         text = text + str(details['name']) + '\n' + str(details['address']) + '\nFrom : ' + str(details['from']) + '\nTo : ' + str(details['to']) + '\nFee : ' + str(details['fee']) + '\nAvailable Doses : ' + str(details['available_capacity']) + '\nMinimum Age Limit : ' + str(details['min_age_limit']) + '\nVaccine : ' + str(details['vaccine'])  + '\n--------------------------\n'
@@ -18,7 +18,6 @@ def displaySessionsByPin(message):
 def displayCalendarByPin(message):
     pincode = message.split()[1]
     calendar = api.getCalendarByPin(pincode)
-    print(calendar)
     text = ""
     if calendar['centers'] == '':
         return 'No Vaccination Slots available in your district.'
@@ -41,3 +40,7 @@ def displayCalendarByPin(message):
     else:
         return text + '\nBook your vaccination now at : https://www.cowin.gov.in/home'
 
+# def main():
+#     displaySessionsByPin('pin 110001')
+
+# main()

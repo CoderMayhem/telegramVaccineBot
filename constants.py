@@ -1,3 +1,4 @@
+API_KEY = '1837443846:AAFWQiHU6w9qUOml3QYpEBjP30DP3pMWUVk'
 serverUrl = 'https://cdn-api.co-vin.in/api'
 
 MAX_MESSAGE_LENGTH = 4096
