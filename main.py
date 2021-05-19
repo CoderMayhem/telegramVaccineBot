@@ -41,7 +41,7 @@ def handle_message(update, context):
         update.message.reply_text(response)
 
 def error(update, context):
-    print(f"Update {update} caused error {context.error}")
+    print(f"Update {update} msg {update.message} caused error {context.error}")
 
 def main():
     updater = Updater(const.API_KEY, use_context=True)
