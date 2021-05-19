@@ -11,6 +11,7 @@ def getSessionsByPin(pincode):
     headers_dict = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36'}
     print(url)
     response = requests.get(url, headers= headers_dict)
+    print('this is response : ' + response)
     print('here?' + str(response.status_code))
     sessions = json.loads(response.text)
     return sessions
