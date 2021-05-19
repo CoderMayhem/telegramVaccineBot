@@ -27,7 +27,7 @@ def getDate():
     date_time = now.strftime("%d-%m-20%y")
     return str(date_time)
 
-def main():
-    getSessionsByPin(110001)
+# def main():
+#     getSessionsByPin(110001)
 
-main()
+# main()
