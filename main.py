@@ -14,16 +14,16 @@ print (bot.getMe())
 print (api.getDate())
 
 def start_command(update, context):
-    bot.send_message(update.message.chat_id, const.welcome_message)
+    bot.send_message(update.message.chat.id, const.welcome_message)
 
 def help_command(update, context):
-    bot.send_message(update.message.chat_id, const.help_message)
+    bot.send_message(update.message.chat.id, const.help_message)
 
 def pin_command(update, context):
-    bot.send_message(update.message.chat_id, const.findByPin_message)
+    bot.send_message(update.message.chat.id, const.findByPin_message)
 
 def calendar_command(update,context):
-    bot.send_message(update.message.chat_id, const.findCalendarByPin_message)
+    bot.send_message(update.message.chat.id, const.findCalendarByPin_message)
 
 
 def handle_message(update, context):
@@ -32,12 +32,12 @@ def handle_message(update, context):
     if isinstance(response, list):
         for i in response:
             if i == response[-1]:
-                bot.send_message(update.message.chat_id, i + '\nBook your vaccination now at : https://www.cowin.gov.in/home')
+                bot.send_message(update.message.chat.id, i + '\nBook your vaccination now at : https://www.cowin.gov.in/home')
             else:
-                bot.send_chat_action(chat_id = update.message.chat_id, action= telegram.ChatAction.TYPING)
-                bot.send_message(update.message.chat_id, i)
+                bot.send_chat_action(chat_id = update.message.chat.id, action= telegram.ChatAction.TYPING)
+                bot.send_message(update.message.chat.id, i)
     else:
-        bot.send_chat_action(chat_id = update.message.chat_id, action= telegram.ChatAction.TYPING)
+        bot.send_chat_action(chat_id = update.message.chat.id, action= telegram.ChatAction.TYPING)
         update.message.reply_text(response)
 
 def error(update, context):
