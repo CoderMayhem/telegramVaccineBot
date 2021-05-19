@@ -6,8 +6,8 @@ import api_calls as api
 import display as dy
 import os
 
-PORT = int(os.environ.get('PORT', '8443'))
-TOKEN = const.API_KEY
+# PORT = int(os.environ.get('PORT', '8443'))
+# TOKEN = const.API_KEY
 print('Bot started ...')
 bot = telegram.Bot(token=const.API_KEY)
 print (bot.getMe())
@@ -57,10 +57,10 @@ def main():
     dp.add_error_handler(error)
 
     #Start the bot
-    updater.start_webhook(listen="0.0.0.0",
-                          port=PORT,
-                          url_path=TOKEN,
-                          webhook_url='https://peaceful-atoll-46044.herokuapp.com/' + const.API_KEY)
+    # updater.start_webhook(listen="0.0.0.0",
+    #                       port=PORT,
+    #                       url_path=TOKEN,
+    #                       webhook_url='https://peaceful-atoll-46044.herokuapp.com/' + const.API_KEY)
     #updater.bot.setWebhook('https://peaceful-atoll-46044.herokuapp.com/' + const.API_KEY)
 
     # updater.start_polling()   #command that starts the programme. If want time delay before taking next input from user, use : updater.start_polling(5) (means delay of 5 seconds)
