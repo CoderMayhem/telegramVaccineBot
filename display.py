@@ -40,7 +40,7 @@ def displayCalendarByPin(message):
     else:
         return text + '\nBook your vaccination now at : https://www.cowin.gov.in/home'
 
-def main():
-    displaySessionsByPin('pin 110001')
+# def main():
+#     displaySessionsByPin('pin 110001')
 
-main()
+# main()
